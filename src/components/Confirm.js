@@ -40,6 +40,18 @@ export class Confirm extends Component {
                             primaryText="Email"
                             secondaryText={ email }
                         />
+                        <ListItem 
+                            primaryText="Age"
+                            secondaryText={ age }
+                        />
+                        <ListItem 
+                            primaryText="Email"
+                            secondaryText={ city }
+                        />
+                        <ListItem 
+                            primaryText="Email"
+                            secondaryText={ occupation }
+                        />
                     </List>
                     <RaisedButton
                         label="Previous"
