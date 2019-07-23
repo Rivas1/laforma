@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 import purple from '@material-ui/core/colors/purple';
 import { StylesContext } from '@material-ui/styles/StylesProvider';
 
@@ -26,26 +26,32 @@ export class FormUserDetails extends Component {
                         floatingLabelText="First Name"
                         onChange={handleChange('firstName')}
                         defaultValue={values.firstName}
+                        style={styles.textfield}
                         />
                     <TextField 
                         hintText="Enter Last Name"
                         floatingLabelText="Last Name"
                         onChange={handleChange('lastName')}
                         defaultValue={values.lastName}
+                        style={styles.textfield}
                         />
                     <TextField 
                         hintText="Enter Email"
                         floatingLabelText="E-mail"
                         onChange={handleChange('email')}
                         defaultValue={values.email}
+                        style={styles.textfield}
                         />
                         <br/>
-                    <RaisedButton
-                        label="Next"
-                        primary={true}
+
+                    <Button 
+                        variant="contained" 
+                        color="primary" 
+                        onClick={this.continue} 
                         style={styles.button}
-                        onClick={this.continue}
-                        />
+                    >
+                        Next
+                    </Button>
                 </React.Fragment>
             </MuiThemeProvider>
         )
@@ -54,6 +60,9 @@ export class FormUserDetails extends Component {
 
 const styles = {
     button: {
+        margin: 15
+    },
+    textfield: {
         margin: 15
     }
 }

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import purple from '@material-ui/core/colors/purple';
+import Button from '@material-ui/core/Button';
 import { StylesContext } from '@material-ui/styles/StylesProvider';
 
 export class FormPersonalDetails extends Component {
@@ -19,7 +18,6 @@ export class FormPersonalDetails extends Component {
 
     render() {
         const { values, handleChange } = this.props;
-        const primary = purple.A400;
         return (
             <MuiThemeProvider>
                 <React.Fragment>
@@ -32,32 +30,39 @@ export class FormPersonalDetails extends Component {
                         floatingLabelText="Age"
                         onChange={handleChange('age')}
                         defaultValue={values.age}
+                        style={styles.textfield}
                         />
                     <TextField 
                         hintText="Enter City"
                         floatingLabelText="City"
                         onChange={handleChange('city')}
                         defaultValue={values.city}
+                        style={styles.textfield}
                         />
                     <TextField 
                         hintText="Enter Occupation"
                         floatingLabelText="Occupation"
                         onChange={handleChange('occupation')}
                         defaultValue={values.occupation}
+                        style={styles.textfield}
                         />
                         <br/>
-                    <RaisedButton
-                        label="Previous"
-                        secondary={true}
+                    <Button 
+                        variant="contained" 
+                        color="secondary" 
+                        onClick={this.previous} 
                         style={styles.button}
-                        onClick={this.previous}
-                    />
-                    <RaisedButton
-                        label="Next"
-                        primary={true}
+                        >
+                        Previous
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        color="primary" 
+                        onClick={this.continue} 
                         style={styles.button}
-                        onClick={this.continue}
-                    />
+                    >
+                        Next
+                    </Button>
                 </React.Fragment>
             </MuiThemeProvider>
         )
@@ -66,6 +71,9 @@ export class FormPersonalDetails extends Component {
 
 const styles = {
     button: {
+        margin: 15
+    },
+    textfield: {
         margin: 15
     }
 }

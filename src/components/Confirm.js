@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import { List, ListItem } from 'material-ui/List'
-import RaisedButton from 'material-ui/RaisedButton';
-import purple from '@material-ui/core/colors/purple';
+import Button from '@material-ui/core/Button';
 import { StylesContext } from '@material-ui/styles/StylesProvider';
 
 export class Confirm extends Component {
@@ -19,7 +18,6 @@ export class Confirm extends Component {
 
     render() {
         const { values: {firstName, lastName, email, occupation, age, city } } = this.props;
-        const primary = purple.A400;
         return (
             <MuiThemeProvider>
                 <React.Fragment>
@@ -53,18 +51,22 @@ export class Confirm extends Component {
                             secondaryText={ occupation }
                         />
                     </List>
-                    <RaisedButton
-                        label="Previous"
-                        secondary={true}
+                    <Button 
+                        variant="contained" 
+                        color="secondary" 
+                        onClick={this.previous} 
                         style={styles.button}
-                        onClick={this.previous}
-                    />
-                    <RaisedButton
-                        label="Next"
-                        primary={true}
+                        >
+                        Previous
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        color="primary" 
+                        onClick={this.continue} 
                         style={styles.button}
-                        onClick={this.continue}
-                    />
+                    >
+                        Next
+                    </Button>
                 </React.Fragment>
             </MuiThemeProvider>
         )
