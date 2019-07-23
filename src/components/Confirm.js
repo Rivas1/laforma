@@ -49,7 +49,7 @@ export class Confirm extends Component {
                             secondaryText={ city }
                         />
                         <ListItem 
-                            primaryText="Email"
+                            primaryText="Occupation"
                             secondaryText={ occupation }
                         />
                     </List>
